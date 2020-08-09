@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Flexbox explicado con manzanitas 🍎🍏">
+  <link rel="stylesheet" href="style.css">
+  <title>Flexbox explicado con manzanitas 🍎🍏</title>
+</head>
+<body>
+  <header>
+    <div class="bcgimg">
+      <nav>
+        <ul>
+          <li><a href="#">Inicio</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Post</a></li>
+        </ul>
+      </nav>
+      <h1>Flexbox explicado con manzanitas 🍎🍏</h1>
+      <figure>
+        <img src="./img/camachoale_b0e5016b-821b-4a0b-afd8-e7bd6d567cdb.jpg" alt="alex camacho">
+      </figure>
+      <a href="https://platzi.com/@alexcamachogz">alexcamachogz</a>
+      <p>5345 Puntos</p>
+      <img src="./img/clock.png" alt="reloj">
+      <p>hace 12 días</p>
+    </div>
+  </header>
+  <main>
+    <div class="content">
+      <h2>¿Qué es Flex?</h2>
+      <hr>
+      <p>Flex es uno de los nuevos valores HTML5 para propiedad CSS display, que nos permite maquinar nuestras páginas web de una manera mucho más fácil de lo que se hacía con la forma tradicional, en la que utilizábamos propiedades como float o position, entre otras.</p>
+      <h2>¿Por qué Flex?</h2>
+      <hr>
+      <p>Se llama Flex porque tenemos un contenedor, llamado contenedor Flex, que es el elemento que contiene la propiedad display: flex.</p>
+      <p>  Desde ese contenedor vamos a poder especificar la alineación de los elementos que hay dentro, el tamaño de los elementos que contienen y distribuir el espacio restante que hay entre los elementos del contenedor Flex, y todo esto en una sola dirección, ya sea una horizontal o vertical. Es decir, podemos distribuir los elementos que contiene la etiqueta sin poner nada dentro de estos elementos.</p>        
+      <p>¿Qué podemos hacer con Flexbox?</p>
+      <ul>
+        <li>Diseños flexibles con menos código.</li>
+        <li>Alinear los elementos de manera vertical y horizontal.</li>
+        <li>Reordenar contenido sin tocar el HTML.</li>
+      </ul>
+      <h2>Conceptos Básicos</h2>
+      <p>Los elementos básicos de Flexbox son:</p>
+      <img src="./img/1-78277fd8-7fdb-47f0-ace6-b1a233f3ce8b.webp" alt="elementos basicos flexbox">
+      <ol>
+        <li><strong>Contenedor. </strong> Existe un elemento padre que es el contenedor, ya que tendrá en su interior cada uno de los ítems flexibles y adaptables.
+          <ul>
+            <li><strong>Eje principal. </strong>Los contenedores flexibles tendrán una orientación principal específica. Por defecto es horizontal con el valor <code>row</code> </li>
+            <li><strong>Eje secundario. </strong>De la misma forma que el eje principal, solo que esta orientación será perpendicular a la principal. Si la principal es horizontal, la secundaría será vertical con el valor <code>column</code> , y viceversa.</li>
+          </ul>
+        </li>
+        <li><strong>Ítem. </strong>Cada uno de los hijos flexibles que tendrá el contenedor en su interior.</li>
+      </ol>
+      <p>Viendo esto en código sería de la siguiente forma.</p>
+      <pre>
+        <code>          
+          &lt;!-- Contenedor --&gt;
+          &lt;section&gt;
+            &lt;!-- ítems --&gt;
+            &lt;article&gt;Contenido 1&lt;/article&gt;
+            &lt;article&gt;Contenido 2&lt;/article&gt;
+          &lt;/section&gt;
+        </code>
+      </pre>
+      <p>Para volver a dicho contenedor un contenedor flexible habrá que modificar su valor display por defecto.</p>
+      <pre>
+        <code>
+          section {
+            display: flex;
+          }
+        </code>
+      </pre>
+      <h2>Dirección de los Ejes</h2>
+      <hr>
+      <p>Existen dos propiedades principales para manipular la dirección y comportamiento de los ítems a lo largo del eje principal del contenedor que son <code>flex-direction</code> y <code> flex-wrap</code>.</p>
+      <p>Mediante la primera propiedad podemos modificar la dirección del eje principal del contenedor para que se oriente en horizontal (por defecto) o en vertical.</p>
+      <div class="flexDirection">
+        <h2>flex-direction: <span>row</span>;</h2>
+        <div class="box-container">
+          <div class="box">1</div>
+          <div class="box">2</div>
+          <div class="box">3</div>
+        </div>
+      </div>
+      <div class="flexDirection">
+        <h2>flex-direction: <span>row-reverse</span>;</h2>
+        <div class="box-container">
+          <div class="box">1</div>
+          <div class="box">2</div>
+          <div class="box">3</div>
+        </div>
+      </div>
+      <div class="flexDirection">
+        <h2>flex-direction: <span>column</span>;</h2>
+        <div class="box-container">
+          <div class="box">1</div>
+          <div class="box">2</div>
+          <div class="box">3</div>
+        </div>
+      </div>
+      <div class="flexDirection">
+        <h2>flex-direction: <span>column-reverse</span>;</h2>
+        <div class="box-container">
+          <div class="box">1</div>
+          <div class="box">2</div>
+          <div class="box">3</div>
+        </div>
+      </div>
+      <pre>
+        <code>
+          section {
+            display: flex;
+            /* Puede tomar los valores de row, row-reverse, column y column-reverse */
+            flex-direction: column;
+          }
+        </code>
+      </pre>
+      <p>Mientras que con la segunda podemos especificar el comportamiento del contenedor respecto a evitar que se desborde o permitir que lo haga.</p>
+      <div class="flexWrap">
+        <h2>flex-wrap: <span>nowrap</span>;</h2>
+        <div class="box-container">
+          <div class="box">1</div>
+          <div class="box">2</div>
+          <div class="box">3</div>
+          <div class="box">4</div>
+        </div>
+      </div>
+      <div class="flexWrap">
+        <h2>flex-wrap: <span>nowrap</span>;</h2>
+        <div class="box-container">
+          <div class="box">1</div>
+          <div class="box">2</div>
+          <div class="box">3</div>
+          <div class="box">4</div>
+        </div>
+      </div>
+      <pre>
+        <code>
+          section {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+          }
+        </code>
+      </pre>
+      <h3>Atajo</h3>
+      <p>Estas propiedades tienen su propiedad atajo que es flex-flow, con la que podemos resumir los valores.</p>
+      <pre>
+        <code>
+          section {
+            display: flex;
+            flex-flow: row wrap;
+          }
+        </code>
+      </pre>
+      <h2>Propiedades de Alineación</h2>
+      <hr>
+      <p>Flexbox tiene propiedades para disponer de los ítems dependiendo de como sea nuestro diseño. A continuación describiremos cada una de estas propiedades.</p>
+      <h3>Alineación al eje principal</h3>
+      <p>La propiedad que nos permite alinear los ítems al eje principal es <code>justify-content</code> y sus valores, así como la visualización de cómo se aplican estos valores a los ítems son los siguientes.</p>
+      <div class="justifyContent">
+        <h2>align-items: <span>flex-start</span>;</h2>
+        <div class="box-container">
+          <div class="box">1</div>
+          <div class="box">2</div>
+          <div class="box">3</div>
+        </div>
+      </div>
+      <div class="justifyContent">
+        <h2>align-items: <span>flex-end</span>;</h2>
+        <div class="box-container">
+          <div class="box">1</div>
+          <div class="box">2</div>
+          <div class="box">3</div>
+        </div>
+      </div>
+      <div class="justifyContent">
+        <h2>align-items: <span>center</span>;</h2>
+        <div class="box-container">
+          <div class="box">1</div>
+          <div class="box">2</div>
+          <div class="box">3</div>
+        </div>
+      </div>
+      <div class="justifyContent">
+        <h2>align-items: <span>stretch</span>;</h2>
+        <div class="box-container">
+          <div class="box">1</div>
+          <div class="box">2</div>
+          <div class="box">3</div>
+        </div>
+      </div>
+      <div class="justifyContent">
+        <h2>align-items: <span>baseline</span>;</h2>
+        <div class="box-container">
+          <div class="box">1</div>
+          <div class="box">2</div>
+          <div class="box">3</div>
+        </div>
+      </div>
+      <p>Ejemplo de código para centrar todos los ítems en el eje horizontal.</p>
+      <pre>
+        <code>
+          section {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+          }
+        </code>
+      </pre>
+      <h3>Alineación al eje secundario</h3>
+      <p>De igual forma que para el eje principal tenemos una propiedad que nos permite alinear los ítems en el eje secundario y es <code>align.items</code> y sus valores, así como la visualización de cómo se aplican estos valores a los ítems son los siguientes.</p>
+      <div class="alingItems">
+        <h2>align-items: <span>flex-start</span>;</h2>
+        <div class="box-container">
+          <div class="box">1</div>
+          <div class="box">2</div>
+          <div class="box">3</div>
+        </div>
+      </div>
+      <div class="alingItems">
+        <h2>align-items: <span>flex-end</span>;</h2>
+        <div class="box-container">
+          <div class="box">1</div>
+          <div class="box">2</div>
+          <div class="box">3</div>
+        </div>
+      </div>      
+      <div class="alingItems">
+        <h2>align-items: <span>center</span>;</h2>
+        <div class="box-container">
+          <div class="box">1</div>
+          <div class="box">2</div>
+          <div class="box">3</div>
+        </div>
+      </div>
+      <div class="alingItems">
+        <h2>align-items: <span>stretch</span>;</h2>
+        <div class="box-container">
+          <div class="box">1</div>
+          <div class="box">2</div>
+          <div class="box">3</div>
+        </div>
+      </div>
+      <div class="alingItems">
+        <h2>align-items: <span>baseline</span>;</h2>
+        <div class="box-container">
+          <div class="box">1</div>
+          <div class="box">2</div>
+          <div class="box">3</div>
+        </div>
+      </div>
+      <p>Ejemplo de código para poner todos los ítems al inicio del eje secundario.</p>
+      <pre>
+        <code>
+          section {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: flex-start;
+          }
+        </code>
+      </pre>
+      <p>La propiedad <code>align-items</code> alinea a todos los hijos de igual forma y se aplica en el contenedor, también tenemos una propiedad para alinear en el eje secundario a cada hijo de forma individual. Esta propiedad es <code>align-self</code> y se debe aplicar en cada hijo específico.</p>
+      <pre>
+        <code>
+          article {
+            background-color: #555;
+            align-self: center;
+          }
+        </code>
+      </pre>
+      <p>En otras palabras nos permite sobreescribir de forma individual el <code>align</code> del padre</p>
+      <h2>Propiedades de los Hijos</h2>
+      <p>A excepci´n de la propiedad <code>align-self</code>, todas las propiedades anteriores se aplican sobre el elemento contenedor. Las siguientes propiedades, sin embargo, se aplican sobre los ítems hijos.</p>
+      <h3>Factor de crecimiento</h3>
+      <p>El factor de crecimiento de los ítems o <code>flex-grow</code> nos permite indicar el tamaño que crecerá un ítem en relación con sus demás hermanos, esto siempre y cuando haya espacio disponible en el contenedor para crecer. Su valor por defecto es <code>0</code>.</p>
+      <pre>
+        <code>
+          article {
+            background-color: #555;
+            align-self: center;
+            flex-grow: 1;
+          }
+        </code>
+      </pre>
+      <h3>Factor de decrecimiento</h3>
+      <p>El factor de decrecimiento o <code>flex-shrink</code> como su nombre lo indica es lo opuesto a la propiedad anterior. De esta forma, los ítems que tengan un valor numérico más grande, serán más pequeños, mientras que los que tengan un valor numérico más pequeño serán más grandes. Su valor por defecto es <code>1</code>.</p>
+      <pre>
+        <code>
+          article {
+            background-color: #555;
+            align-self: center;
+            flex-grow: 1;
+            flex-shrink: 2;
+          }
+        </code>
+    </pre>
+    <h3>Tamaño por defecto</h3>
+    <p>La propiedad <code>flex-basis</code>, define el tamaño base que tendrán los ítems antes de aplicarle la distribución de espacio. Su valor por defecto es <code>auto</code></p>
+    <pre>
+      <code>
+        article {
+          background-color: #555;
+          align-self: center;
+          flex-grow: 1;
+          flex-shrink: 2;
+          flex-basis: 120px;
+        }
+      </code>
+    </pre>
+    <h3>Atajo</h3>
+    <p>Estas tres propiedades tiene su propio atajo llamado <code>flex</code>. Funciona de la siguiente forma:</p>
+    <pre>
+      <code>
+        article {
+          background-color: #555;
+          align-self: center;
+          flex: 1 2 120px;
+        }
+      </code>
+    </pre>
+    <h2>Huecos</h2>
+    <hr>
+    <p>Flexbox también tiene propiedades para manejar el espaciado existente entre sus ítems dentro del elemento contenedor, estas propiedades son <code>row-gap</code> y <code>column-gap</code>, son alternativas al uso de <code>padding</code> o <code>margin</code> en los elementos hijos.</p>
+    <pre>
+      <code>
+        selector {
+          row-gap: 5px;
+          column-gap: 10px;
+        }
+      </code>
+    </pre>
+    <p>❗Hay que tener en cuenta que solo una de las dos propiedades tendrá efecto, dependiendo de si la propiedad flex-direction está establecida en column o en row. Eso sí, es posible usar ambas si tenemos la propiedad flex-wrap definida a wrap y, por lo tanto, disponemos de multicolumnas flexbox.</p>
+    <h3>Atajo</h3>
+    <p>Estas dos propiedades igual que otras dentro de flexbox tienen su propio atajo llamado <code>gap</code>. <br>Funciona de la siguiente forma.</p>
+    <pre>
+      <code>
+        article {
+          background-color: #555;
+          /* gap: row column */
+          gap: 5px 10px;
+          /* 1 parámetro: usa el mismo para ambos */
+          gap: 5px;
+        }
+      </code>
+    </pre>
+    <p>❗Tener en cuenta que estas propiedades de huecos en flexbox, aún no tienen un soporte demasiado extendido entre navegadores. Revisar en <a href="https://caniuse.com/#search=gap">Can I Use</a>.</p>
+    <h2>Orden de los ítems</h2>
+    <hr>
+    <p>Las propiedades más interesantes, es <code>order</code>, que modificar y establece el orden de los ítems según una secuencia numérica. Por defecto, todos los ítems flex tienen un <code>order: 0</code> implícito, aunque no se especifique. Si indicamos uno, se irán recolocando los ítems según su número, colocando antes los ítems con número más pequeño (incluso valores negativos) y después los ítems con números más altos.</p>
+    <pre>
+      <code>
+        article {
+          background-color: #555;
+          order: 2;
+        }
+      </code>
+    </pre>
+    <hr>
+    <p>Este artículo también lo puede encontrar en <a href="https://medium.com/@camacho.alex/una-gu%C3%ADa-completa-de-flexbox-768b038de5e9">Medium</a>. Donde también escribo más artículos o al menos lo intento 👌🏻</p>
+    <hr>
+    <!-- Fin contenedor total -->
+    </div>
+  </main>
+  <footer>
+    <figure>
+      <img src="./img/camachoale_b0e5016b-821b-4a0b-afd8-e7bd6d567cdb.jpg" alt="alex camacho">
+    </figure>
+    <a href="https://platzi.com/@alexcamachogz">@alexcamachogz</a>
+    <p>5345 Puntos</p>
+    <img src="./img/clock.png" alt="reloj">
+    <p>hace 12 días</p>
+    <a href="https://platzi.com/blog/autores/alexcamachogz">Todas sus entradas</a>
+  </footer>
+</body>
+</html>
