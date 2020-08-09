@@ -3,31 +3,37 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Flexbox explicado con manzanitas 🍎🍏">
+  <meta name="description" content="Práctica HTML y CSS copiando artículo de Alejandra Camacho GZ">
+  <link rel="icon" sizes="192x192" href="https://static.platzi.com/static/images/logos/platzi_favicon.png">
+  <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
   <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
   <title>Flexbox explicado con manzanitas 🍎🍏</title>
 </head>
 <body>
-  <header>
+  <header class="header">
     <div class="bcgimg">
-      <nav>
+      <p class="description">Copia de un articulo realizado por Alejandra Camacho GZ en Platzi para practicar maquetación y CSS con flexbox y grid. <br> El artículo original se puede encontrar en <a class="a-description" href="https://platzi.com/blog/flexbox-explicado-con-manzanitas/" target="_blank">https://platzi.com/blog/flexbox-explicado-con-manzanitas/</a></p>
+      <nav class="nav">
         <ul>
           <li><a href="#">Inicio</a></li>
           <li><a href="#">Blog</a></li>
           <li><a href="#">Post</a></li>
         </ul>
       </nav>
-      <h1>Flexbox explicado con manzanitas 🍎🍏</h1>
-      <figure>
-        <img src="./img/camachoale_b0e5016b-821b-4a0b-afd8-e7bd6d567cdb.jpg" alt="alex camacho">
-      </figure>
-      <a href="https://platzi.com/@alexcamachogz">alexcamachogz</a>
-      <p>5345 Puntos</p>
-      <img src="./img/clock.png" alt="reloj">
-      <p>hace 12 días</p>
+      <h1 class="h1-header">Flexbox explicado con manzanitas 🍎🍏</h1>
+      <div class="data">
+        <figure>
+          <img class="img-circle-header" src="./img/camachoale_b0e5016b-821b-4a0b-afd8-e7bd6d567cdb.jpg" alt="alex camacho">
+        </figure>
+        <a href="https://platzi.com/@alexcamachogz" target="_blank">alexcamachogz</a>
+        <p class="p-header">5345 Puntos</p>
+        <img class="img-clock" src="./img/clock.png" alt="reloj">
+        <p class="p-header">hace 12 días</p>
+      </div>
     </div>
   </header>
-  <main>
+  <main class="main">
     <div class="content">
       <h2>¿Qué es Flex?</h2>
       <hr>
@@ -58,18 +64,18 @@
       <pre>
         <code>          
           &lt;!-- Contenedor --&gt;
-          &lt;section&gt;
+          <span>&lt;section&gt;</span>
             &lt;!-- ítems --&gt;
-            &lt;article&gt;Contenido 1&lt;/article&gt;
-            &lt;article&gt;Contenido 2&lt;/article&gt;
-          &lt;/section&gt;
+            <span>&lt;article&gt;</span>Contenido 1<span>&lt;/article&gt;</span>
+            <span>&lt;article&gt;</span>Contenido 2<span>&lt;/article&gt;</span>
+          <span>&lt;/section&gt;</span>
         </code>
       </pre>
       <p>Para volver a dicho contenedor un contenedor flexible habrá que modificar su valor display por defecto.</p>
       <pre>
         <code>
-          section {
-            display: flex;
+          <span>section</span> {
+            <span class="sp-mo">display</span>: flex;
           }
         </code>
       </pre>
@@ -77,72 +83,77 @@
       <hr>
       <p>Existen dos propiedades principales para manipular la dirección y comportamiento de los ítems a lo largo del eje principal del contenedor que son <code>flex-direction</code> y <code> flex-wrap</code>.</p>
       <p>Mediante la primera propiedad podemos modificar la dirección del eje principal del contenedor para que se oriente en horizontal (por defecto) o en vertical.</p>
-      <div class="flexDirection">
-        <h2>flex-direction: <span>row</span>;</h2>
-        <div class="box-container">
-          <div class="box">1</div>
-          <div class="box">2</div>
-          <div class="box">3</div>
+      <div class="wrap-container">
+        <div class="flexDirection">
+          <h2>flex-direction: <span>row</span>;</h2>
+          <div class="box-container bc1">
+            <div class="box"><p class="p-box">1</p></div>
+            <div class="box"><p class="p-box">2</p></div>
+            <div class="box"><p class="p-box">3</p></div>
+          </div>
         </div>
-      </div>
-      <div class="flexDirection">
-        <h2>flex-direction: <span>row-reverse</span>;</h2>
-        <div class="box-container">
-          <div class="box">1</div>
-          <div class="box">2</div>
-          <div class="box">3</div>
+        <div class="flexDirection">
+          <h2>flex-direction: <span>row-reverse</span>;</h2>
+          <div class="box-container bc2">
+            <div class="box"><p class="p-box">1</p></div>
+            <div class="box"><p class="p-box">2</p></div>
+            <div class="box"><p class="p-box">3</p></div>
+          </div>
         </div>
-      </div>
-      <div class="flexDirection">
-        <h2>flex-direction: <span>column</span>;</h2>
-        <div class="box-container">
-          <div class="box">1</div>
-          <div class="box">2</div>
-          <div class="box">3</div>
+        <div class="flexDirection">
+          <h2>flex-direction: <span>column</span>;</h2>
+          <div class="box-container bc3">
+            <div class="box"><p class="p-box">1</p></div>
+            <div class="box"><p class="p-box">2</p></div>
+            <div class="box"><p class="p-box">3</p></div>
+          </div>
         </div>
-      </div>
-      <div class="flexDirection">
-        <h2>flex-direction: <span>column-reverse</span>;</h2>
-        <div class="box-container">
-          <div class="box">1</div>
-          <div class="box">2</div>
-          <div class="box">3</div>
+        <div class="flexDirection">
+          <h2>flex-direction: <span>column-reverse</span>;</h2>
+          <div class="box-container bc4">
+            <div class="box"><p class="p-box">1</p></div>
+            <div class="box"><p class="p-box">2</p></div>
+            <div class="box"><p class="p-box">3</p></div>
+          </div>
         </div>
       </div>
       <pre>
         <code>
-          section {
-            display: flex;
+          <span>section</span> {
+            <span class="sp-mo">display</span>: flex;
             /* Puede tomar los valores de row, row-reverse, column y column-reverse */
-            flex-direction: column;
+            <span class="sp-mo">flex-direction</span>: column;
           }
         </code>
       </pre>
       <p>Mientras que con la segunda podemos especificar el comportamiento del contenedor respecto a evitar que se desborde o permitir que lo haga.</p>
-      <div class="flexWrap">
-        <h2>flex-wrap: <span>nowrap</span>;</h2>
-        <div class="box-container">
-          <div class="box">1</div>
-          <div class="box">2</div>
-          <div class="box">3</div>
-          <div class="box">4</div>
+      <div class="wrap-container">
+        <div class="flexWrap">
+          <h2>flex-wrap: <span>nowrap</span>;</h2>
+          <div class="box-container wc1">
+            <div class="box"><p class="p-box">1</p></div>
+            <div class="box"><p class="p-box">2</p></div>
+            <div class="box"><p class="p-box">3</p></div>
+            <div class="box"><p class="p-box">4</p></div>            
+            <div class="box"><p class="p-box">5</p></div>        
+          </div>
         </div>
-      </div>
-      <div class="flexWrap">
-        <h2>flex-wrap: <span>nowrap</span>;</h2>
-        <div class="box-container">
-          <div class="box">1</div>
-          <div class="box">2</div>
-          <div class="box">3</div>
-          <div class="box">4</div>
+        <div class="flexWrap">
+          <h2>flex-wrap: <span>wrap</span>;</h2>
+          <div class="box-container wc2">
+            <div class="box"><p class="p-box">1</p></div>
+            <div class="box"><p class="p-box">2</p></div>
+            <div class="box"><p class="p-box">3</p></div>
+            <div class="box"><p class="p-box">4</p></div>
+          </div>
         </div>
-      </div>
+        </div>
       <pre>
         <code>
-          section {
-            display: flex;
-            flex-direction: row;
-            flex-wrap: wrap;
+          <span>section</span> {
+            <span class="sp-mo">display</span>: flex;
+            <span class="sp-mo">flex-direction</span>: row;
+            <span class="sp-mo">flex-wrap</span>: wrap;
           }
         </code>
       </pre>
@@ -150,9 +161,9 @@
       <p>Estas propiedades tienen su propiedad atajo que es flex-flow, con la que podemos resumir los valores.</p>
       <pre>
         <code>
-          section {
-            display: flex;
-            flex-flow: row wrap;
+          <span>section</span> {
+            <span class="sp-mo">display</span>: flex;
+            <span class="sp-mo">flex-flow</span>: row wrap;
           }
         </code>
       </pre>
@@ -161,117 +172,121 @@
       <p>Flexbox tiene propiedades para disponer de los ítems dependiendo de como sea nuestro diseño. A continuación describiremos cada una de estas propiedades.</p>
       <h3>Alineación al eje principal</h3>
       <p>La propiedad que nos permite alinear los ítems al eje principal es <code>justify-content</code> y sus valores, así como la visualización de cómo se aplican estos valores a los ítems son los siguientes.</p>
-      <div class="justifyContent">
-        <h2>align-items: <span>flex-start</span>;</h2>
-        <div class="box-container">
-          <div class="box">1</div>
-          <div class="box">2</div>
-          <div class="box">3</div>
+      <div class="wrap-container">
+        <div class="justifyContent">
+          <h2>justify-content: <span>flex-start</span>;</h2>
+          <div class="box-container jc1">
+            <div class="box"><p class="p-box">1</p></div>
+            <div class="box"><p class="p-box">2</p></div>
+            <div class="box"><p class="p-box">3</p></div>
+          </div>
         </div>
-      </div>
-      <div class="justifyContent">
-        <h2>align-items: <span>flex-end</span>;</h2>
-        <div class="box-container">
-          <div class="box">1</div>
-          <div class="box">2</div>
-          <div class="box">3</div>
+        <div class="justifyContent">
+          <h2>justify-content: <span>flex-end</span>;</h2>
+          <div class="box-container jc2">
+            <div class="box"><p class="p-box">1</p></div>
+            <div class="box"><p class="p-box">2</p></div>
+            <div class="box"><p class="p-box">3</p></div>
+          </div>
         </div>
-      </div>
-      <div class="justifyContent">
-        <h2>align-items: <span>center</span>;</h2>
-        <div class="box-container">
-          <div class="box">1</div>
-          <div class="box">2</div>
-          <div class="box">3</div>
+        <div class="justifyContent">
+          <h2>justify-content: <span>center</span>;</h2>
+          <div class="box-container jc3">
+            <div class="box"><p class="p-box">1</p></div>
+            <div class="box"><p class="p-box">2</p></div>
+            <div class="box"><p class="p-box">3</p></div>
+          </div>
+        </div>      
+        <div class="justifyContent">
+          <h2>justify-content: <span>space-around</span>;</h2>
+          <div class="box-container jc4">
+            <div class="box"><p class="p-box">1</p></div>
+            <div class="box"><p class="p-box">2</p></div>
+            <div class="box"><p class="p-box">3</p></div>
+          </div>
         </div>
-      </div>
-      <div class="justifyContent">
-        <h2>align-items: <span>stretch</span>;</h2>
-        <div class="box-container">
-          <div class="box">1</div>
-          <div class="box">2</div>
-          <div class="box">3</div>
+        <div class="justifyContent">
+          <h2>justify-content: <span>space-between</span>;</h2>
+          <div class="box-container jc5">
+            <div class="box"><p class="p-box">1</p></div>
+            <div class="box"><p class="p-box">2</p></div>
+            <div class="box"><p class="p-box">3</p></div>
+          </div>
         </div>
-      </div>
-      <div class="justifyContent">
-        <h2>align-items: <span>baseline</span>;</h2>
-        <div class="box-container">
-          <div class="box">1</div>
-          <div class="box">2</div>
-          <div class="box">3</div>
+        <div class="justifyContent">
+          <h2>justify-content: <span>space-evenly</span>;</h2>
+          <div class="box-container jc6">
+            <div class="box"><p class="p-box">1</p></div>
+            <div class="box"><p class="p-box">2</p></div>
+            <div class="box"><p class="p-box">3</p></div>
+          </div>
         </div>
       </div>
       <p>Ejemplo de código para centrar todos los ítems en el eje horizontal.</p>
       <pre>
         <code>
-          section {
-            display: flex;
-            flex-direction: row;
-            flex-wrap: wrap;
-            justify-content: center;
+          <span>section</span> {
+            <span class="sp-mo">display</span>: flex;
+            <span class="sp-mo">flex-direction</span>: row;
+            <span class="sp-mo">flex-wrap</span>: wrap;
+            <span class="sp-mo">justify-content</span>: center;
           }
         </code>
       </pre>
       <h3>Alineación al eje secundario</h3>
       <p>De igual forma que para el eje principal tenemos una propiedad que nos permite alinear los ítems en el eje secundario y es <code>align.items</code> y sus valores, así como la visualización de cómo se aplican estos valores a los ítems son los siguientes.</p>
-      <div class="alingItems">
-        <h2>align-items: <span>flex-start</span>;</h2>
-        <div class="box-container">
-          <div class="box">1</div>
-          <div class="box">2</div>
-          <div class="box">3</div>
+      <div class="wrap-container">
+        <div class="alingItems">
+          <h2>align-items: <span>flex-start</span>;</h2>
+          <div class="box-container ai1">
+            <div class="box"><p class="p-box">1</p></div>
+            <div class="box"><p class="p-box">2</p></div>
+            <div class="box"><p class="p-box">3</p></div>
+          </div>
         </div>
-      </div>
-      <div class="alingItems">
-        <h2>align-items: <span>flex-end</span>;</h2>
-        <div class="box-container">
-          <div class="box">1</div>
-          <div class="box">2</div>
-          <div class="box">3</div>
-        </div>
-      </div>      
-      <div class="alingItems">
-        <h2>align-items: <span>center</span>;</h2>
-        <div class="box-container">
-          <div class="box">1</div>
-          <div class="box">2</div>
-          <div class="box">3</div>
-        </div>
-      </div>
-      <div class="alingItems">
-        <h2>align-items: <span>stretch</span>;</h2>
-        <div class="box-container">
-          <div class="box">1</div>
-          <div class="box">2</div>
-          <div class="box">3</div>
-        </div>
-      </div>
-      <div class="alingItems">
-        <h2>align-items: <span>baseline</span>;</h2>
-        <div class="box-container">
-          <div class="box">1</div>
-          <div class="box">2</div>
-          <div class="box">3</div>
+        <div class="alingItems">
+          <h2>align-items: <span>flex-end</span>;</h2>
+          <div class="box-container ai2">
+            <div class="box"><p class="p-box">1</p></div>
+            <div class="box"><p class="p-box">2</p></div>
+            <div class="box"><p class="p-box">3</p></div>
+          </div>
+        </div>      
+        <div class="alingItems">
+          <h2>align-items: <span>center</span>;</h2>
+          <div class="box-container ai3">
+            <div class="box"><p class="p-box">1</p></div>
+            <div class="box"><p class="p-box">2</p></div>
+            <div class="box"><p class="p-box">3</p></div>
+          </div>
+        </div>        
+        <div class="alingItems">
+          <h2>align-items: <span>baseline</span>;</h2>
+          <div class="box-container ai5">
+            <div class="box b-ai1"><p class="p-box">1</p></div>
+            <div class="box b-ai2"><p class="p-box">2</p></div>
+            <div class="box b-ai3"><p class="p-box">3</p></div>
+          </div>
         </div>
       </div>
       <p>Ejemplo de código para poner todos los ítems al inicio del eje secundario.</p>
       <pre>
         <code>
-          section {
-            display: flex;
-            flex-direction: row;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-items: flex-start;
+          <span>section</span> {
+            <span class="sp-mo">display</span>: flex;
+            <span class="sp-mo">flex-direction</span>: row;
+            <span class="sp-mo">flex-wrap</span>: wrap;
+            <span class="sp-mo">justify-content</span>: center;
+            <span class="sp-mo">align-items</span>: flex-start;
           }
         </code>
       </pre>
       <p>La propiedad <code>align-items</code> alinea a todos los hijos de igual forma y se aplica en el contenedor, también tenemos una propiedad para alinear en el eje secundario a cada hijo de forma individual. Esta propiedad es <code>align-self</code> y se debe aplicar en cada hijo específico.</p>
       <pre>
         <code>
-          article {
-            background-color: #555;
-            align-self: center;
+          <span>article</span> {
+            <span class="sp-mo">background-color</span>: #555;
+            <span class="sp-mo">align-self</span>: center;
           }
         </code>
       </pre>
@@ -282,10 +297,10 @@
       <p>El factor de crecimiento de los ítems o <code>flex-grow</code> nos permite indicar el tamaño que crecerá un ítem en relación con sus demás hermanos, esto siempre y cuando haya espacio disponible en el contenedor para crecer. Su valor por defecto es <code>0</code>.</p>
       <pre>
         <code>
-          article {
-            background-color: #555;
-            align-self: center;
-            flex-grow: 1;
+          <span>article</span> {
+            <span class="sp-mo">background-color</span>: #555;
+            <span class="sp-mo">align-self</span>: center;
+            <span class="sp-mo">flex-grow</span>: 1;
           }
         </code>
       </pre>
@@ -293,11 +308,11 @@
       <p>El factor de decrecimiento o <code>flex-shrink</code> como su nombre lo indica es lo opuesto a la propiedad anterior. De esta forma, los ítems que tengan un valor numérico más grande, serán más pequeños, mientras que los que tengan un valor numérico más pequeño serán más grandes. Su valor por defecto es <code>1</code>.</p>
       <pre>
         <code>
-          article {
-            background-color: #555;
-            align-self: center;
-            flex-grow: 1;
-            flex-shrink: 2;
+          <span>article</span> {
+            <span class="sp-mo">background-color</span>: #555;
+            <span class="sp-mo">align-self</span>: center;
+            <span class="sp-mo">flex-grow</span>: 1;
+            <span class="sp-mo">flex-shrink</span>: 2;
           }
         </code>
     </pre>
@@ -305,12 +320,12 @@
     <p>La propiedad <code>flex-basis</code>, define el tamaño base que tendrán los ítems antes de aplicarle la distribución de espacio. Su valor por defecto es <code>auto</code></p>
     <pre>
       <code>
-        article {
-          background-color: #555;
-          align-self: center;
-          flex-grow: 1;
-          flex-shrink: 2;
-          flex-basis: 120px;
+        <span>article</span> {
+          <span class="sp-mo">background-color</span>: #555;
+          <span class="sp-mo">align-self</span>: center;
+          <span class="sp-mo">flex-grow</span>: 1;
+          <span class="sp-mo">flex-shrink</span>: 2;
+          <span class="sp-mo">flex-basis</span>: 120px;
         }
       </code>
     </pre>
@@ -318,10 +333,10 @@
     <p>Estas tres propiedades tiene su propio atajo llamado <code>flex</code>. Funciona de la siguiente forma:</p>
     <pre>
       <code>
-        article {
-          background-color: #555;
-          align-self: center;
-          flex: 1 2 120px;
+        <span>article</span> {
+          <span class="sp-mo">background-color</span>: #555;
+          <span class="sp-mo">align-self</span>: center;
+          <span class="sp-mo">flex</span>: 1 2 120px;
         }
       </code>
     </pre>
@@ -330,9 +345,9 @@
     <p>Flexbox también tiene propiedades para manejar el espaciado existente entre sus ítems dentro del elemento contenedor, estas propiedades son <code>row-gap</code> y <code>column-gap</code>, son alternativas al uso de <code>padding</code> o <code>margin</code> en los elementos hijos.</p>
     <pre>
       <code>
-        selector {
-          row-gap: 5px;
-          column-gap: 10px;
+        <span>selector</span> {
+          <span class="sp-mo">row-gap</span>: 5px;
+          <span class="sp-mo">column-gap</span>: 10px;
         }
       </code>
     </pre>
@@ -341,24 +356,24 @@
     <p>Estas dos propiedades igual que otras dentro de flexbox tienen su propio atajo llamado <code>gap</code>. <br>Funciona de la siguiente forma.</p>
     <pre>
       <code>
-        article {
-          background-color: #555;
+        <span>article</span> {
+          <span class="sp-mo">background-color</span>: #555;
           /* gap: row column */
-          gap: 5px 10px;
+          <span class="sp-mo">gap</span>: 5px 10px;
           /* 1 parámetro: usa el mismo para ambos */
-          gap: 5px;
+          <span class="sp-mo">gap</span>: 5px;
         }
       </code>
     </pre>
-    <p>❗Tener en cuenta que estas propiedades de huecos en flexbox, aún no tienen un soporte demasiado extendido entre navegadores. Revisar en <a href="https://caniuse.com/#search=gap">Can I Use</a>.</p>
+    <p>❗Tener en cuenta que estas propiedades de huecos en flexbox, aún no tienen un soporte demasiado extendido entre navegadores. Revisar en <a href="https://caniuse.com/#search=gap" target="_blank">Can I Use</a>.</p>
     <h2>Orden de los ítems</h2>
     <hr>
     <p>Las propiedades más interesantes, es <code>order</code>, que modificar y establece el orden de los ítems según una secuencia numérica. Por defecto, todos los ítems flex tienen un <code>order: 0</code> implícito, aunque no se especifique. Si indicamos uno, se irán recolocando los ítems según su número, colocando antes los ítems con número más pequeño (incluso valores negativos) y después los ítems con números más altos.</p>
     <pre>
       <code>
-        article {
-          background-color: #555;
-          order: 2;
+        <span>article</span> {
+          <span class="sp-mo">background-color</span>: #555;;
+          <span class="sp-mo">order</span>: 2;
         }
       </code>
     </pre>
@@ -369,14 +384,16 @@
     </div>
   </main>
   <footer>
-    <figure>
-      <img src="./img/camachoale_b0e5016b-821b-4a0b-afd8-e7bd6d567cdb.jpg" alt="alex camacho">
-    </figure>
-    <a href="https://platzi.com/@alexcamachogz">@alexcamachogz</a>
-    <p>5345 Puntos</p>
-    <img src="./img/clock.png" alt="reloj">
-    <p>hace 12 días</p>
-    <a href="https://platzi.com/blog/autores/alexcamachogz">Todas sus entradas</a>
+    <div class="footer-wrap">
+      <figure>
+        <img class="img-circle-footer" src="./img/camachoale_b0e5016b-821b-4a0b-afd8-e7bd6d567cdb.jpg" alt="alex camacho">
+      </figure>
+      <a href="https://platzi.com/@alexcamachogz">@alexcamachogz</a>
+      <p>5345 Puntos</p>
+      <img class="img-clock" src="./img/clock _black.png" alt="reloj">
+      <p>hace 12 días</p>
+      <a href="https://platzi.com/blog/autores/alexcamachogz" target="_blank">Todas sus entradas</a>
+    </div>
   </footer>
 </body>
 </html>
