@@ -19,7 +19,7 @@
                 "height": 100
               },
               "position": {
-                "x": 508,
+                "x": 794,
                 "y": 12
               },
               "angle": 0,
@@ -31,7 +31,7 @@
                   "class": "element-shape hasNoOpenThreats isInScope"
                 },
                 "text": {
-                  "text": "Hacer Login"
+                  "text": "WEB"
                 },
                 ".element-text": {
                   "class": "element-text hasNoOpenThreats isInScope"
@@ -45,13 +45,14 @@
                 "height": 80
               },
               "position": {
-                "x": 210,
-                "y": 227
+                "x": 306,
+                "y": 282
               },
               "angle": 0,
               "id": "51d64ed5-5078-4ab3-89ec-cf3f34d5c2c3",
               "z": 2,
               "hasOpenThreats": false,
+              "threats": [],
               "attrs": {
                 ".element-shape": {
                   "class": "element-shape hasNoOpenThreats isInScope"
@@ -71,22 +72,30 @@
                 "height": 80
               },
               "position": {
-                "x": 444,
-                "y": 472
+                "x": 133,
+                "y": 579
               },
               "angle": 0,
               "id": "951e20b1-e3bf-42f8-9054-d02f4d9ec381",
               "z": 3,
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
+              "threats": [
+                {
+                  "status": "Open",
+                  "severity": "Medium",
+                  "title": "Shoulder Surfing",
+                  "type": "Information disclosure"
+                }
+              ],
               "attrs": {
                 ".element-shape": {
-                  "class": "element-shape hasNoOpenThreats isInScope"
+                  "class": "element-shape hasOpenThreats isInScope"
                 },
                 "text": {
                   "text": "Memoria"
                 },
                 ".element-text": {
-                  "class": "element-text hasNoOpenThreats isInScope"
+                  "class": "element-text hasOpenThreats isInScope"
                 }
               }
             },
@@ -99,12 +108,7 @@
               "target": {
                 "id": "51d64ed5-5078-4ab3-89ec-cf3f34d5c2c3"
               },
-              "vertices": [
-                {
-                  "x": 315,
-                  "y": 429
-                }
-              ],
+              "vertices": [],
               "id": "7f5005a3-a41e-4aa5-8f58-0b6b26900b79",
               "labels": [
                 {
@@ -128,12 +132,213 @@
                   "class": "connection hasNoOpenThreats isInScope"
                 }
               }
+            },
+            {
+              "type": "tm.Flow",
+              "smooth": true,
+              "source": {
+                "id": "51d64ed5-5078-4ab3-89ec-cf3f34d5c2c3"
+              },
+              "target": {
+                "id": "89a054d9-3bc3-4121-8570-22fe7e495e46"
+              },
+              "vertices": [
+                {
+                  "x": 380,
+                  "y": 181
+                }
+              ],
+              "id": "6c29dfa7-8baa-4ba9-88aa-66bb781916bd",
+              "labels": [
+                {
+                  "position": 0.5,
+                  "attrs": {
+                    "text": {
+                      "text": "Contraseña",
+                      "font-weight": "400",
+                      "font-size": "small"
+                    }
+                  }
+                }
+              ],
+              "z": 5,
+              "hasOpenThreats": false,
+              "attrs": {
+                ".marker-target": {
+                  "class": "marker-target hasNoOpenThreats isInScope"
+                },
+                ".connection": {
+                  "class": "connection hasNoOpenThreats isInScope"
+                }
+              }
+            },
+            {
+              "type": "tm.Boundary",
+              "smooth": true,
+              "source": {
+                "x": 67,
+                "y": 546
+              },
+              "target": {
+                "x": 817,
+                "y": 590
+              },
+              "vertices": [
+                {
+                  "x": 185,
+                  "y": 397
+                },
+                {
+                  "x": 455,
+                  "y": 398
+                },
+                {
+                  "x": 644,
+                  "y": 404
+                }
+              ],
+              "id": "681b7a94-2cb3-4e54-8984-9eedcf56a44e",
+              "z": 6,
+              "attrs": {}
+            },
+            {
+              "type": "tm.Store",
+              "size": {
+                "width": 160,
+                "height": 80
+              },
+              "position": {
+                "x": 449,
+                "y": 98
+              },
+              "angle": 0,
+              "id": "89a054d9-3bc3-4121-8570-22fe7e495e46",
+              "z": 7,
+              "hasOpenThreats": false,
+              "attrs": {
+                ".element-shape": {
+                  "class": "element-shape hasNoOpenThreats isInScope"
+                },
+                "text": {
+                  "text": "Login"
+                },
+                ".element-text": {
+                  "class": "element-text hasNoOpenThreats isInScope"
+                }
+              }
+            },
+            {
+              "type": "tm.Flow",
+              "smooth": true,
+              "source": {
+                "id": "89a054d9-3bc3-4121-8570-22fe7e495e46"
+              },
+              "target": {
+                "id": "f72ef80b-d34a-4986-ab34-204a43e90d3f"
+              },
+              "vertices": [
+                {
+                  "x": 667,
+                  "y": 48
+                }
+              ],
+              "id": "78022c88-29f8-4473-bb59-2abbcc091c05",
+              "labels": [
+                {
+                  "position": 0.5,
+                  "attrs": {
+                    "text": {
+                      "text": "Comprobar Datos",
+                      "font-weight": "400",
+                      "font-size": "small"
+                    }
+                  }
+                }
+              ],
+              "z": 8,
+              "hasOpenThreats": false,
+              "attrs": {
+                ".marker-target": {
+                  "class": "marker-target hasNoOpenThreats isInScope"
+                },
+                ".connection": {
+                  "class": "connection hasNoOpenThreats isInScope"
+                }
+              }
+            },
+            {
+              "type": "tm.Store",
+              "size": {
+                "width": 160,
+                "height": 80
+              },
+              "position": {
+                "x": 395,
+                "y": 583
+              },
+              "angle": 0,
+              "id": "254e5bb6-537a-4a41-92e8-c288b3ce76b0",
+              "z": 9,
+              "hasOpenThreats": true,
+              "threats": [
+                {
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Spoofing",
+                  "title": "Robo de Identidad"
+                }
+              ],
+              "attrs": {
+                ".element-shape": {
+                  "class": "element-shape hasOpenThreats isInScope"
+                },
+                "text": {
+                  "text": "Gestor Contraseñas"
+                },
+                ".element-text": {
+                  "class": "element-text hasOpenThreats isInScope"
+                }
+              }
+            },
+            {
+              "type": "tm.Flow",
+              "smooth": true,
+              "source": {
+                "id": "254e5bb6-537a-4a41-92e8-c288b3ce76b0"
+              },
+              "target": {
+                "id": "51d64ed5-5078-4ab3-89ec-cf3f34d5c2c3"
+              },
+              "vertices": [],
+              "id": "1c738a2e-1979-4931-af5e-7312bd7c2848",
+              "labels": [
+                {
+                  "position": 0.5,
+                  "attrs": {
+                    "text": {
+                      "text": "Contraseña",
+                      "font-weight": "400",
+                      "font-size": "small"
+                    }
+                  }
+                }
+              ],
+              "z": 10,
+              "hasOpenThreats": false,
+              "attrs": {
+                ".marker-target": {
+                  "class": "marker-target hasNoOpenThreats isInScope"
+                },
+                ".connection": {
+                  "class": "connection hasNoOpenThreats isInScope"
+                }
+              }
             }
           ]
         },
         "size": {
-          "height": 590,
-          "width": 790
+          "height": 1120.800048828125,
+          "width": 1746
         }
       }
     ]
